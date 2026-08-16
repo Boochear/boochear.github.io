@@ -1,0 +1,141 @@
+:root {
+    --panel: #12141c;
+    --panel-border: #262a38;
+    --white: #fff;
+    --muted: #a8a8a8;
+    --link-bg: #050505;
+    --link-border: #5a5a5a;
+    --link-bg-hover: #2e2e2e;
+    --font-main: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: url("/media/wallpaper.jpg") center center / cover no-repeat fixed;
+    color: var(--white);
+    font-family: var(--font-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 640px;
+    padding: 36px 28px 30px;
+    text-align: center;
+}
+
+.avatar-wrap {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 22px;
+    position: relative;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--white);
+    display: block;
+    box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.6);
+}
+
+.nickname {
+    font-family: var(--font-main);
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: var(--white);
+    line-height: 1;
+}
+
+.tagline {
+    margin: 5px 0 20px;
+    font-size: 16px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.links {
+    padding: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(7, auto);
+    grid-auto-columns: 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    background: var(--link-bg);
+    border: 1.5px solid var(--link-border);
+    text-decoration: none;
+    color: var(--white);
+    text-align: left;
+    border-radius: 5px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.link-item:hover,
+.link-item:focus-visible {
+    border-color: var(--white);
+    background: var(--link-bg-hover);
+}
+
+.link-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.link-label {
+    flex: 1;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 420px) {
+    .card {
+        padding: 28px 18px 24px;
+    }
+
+    .nickname {
+        font-size: 34px;
+    }
+
+    .links {
+        grid-auto-flow: row;
+        grid-template-rows: none;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .link-item {
+        transition: none;
+    }
+}
