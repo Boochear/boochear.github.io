@@ -1,0 +1,19 @@
+<svg viewBox="0 0 365 365" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="365.000000" height="365.000000" fill="none">
+	<defs>
+		<g id="pixso_custom_effect_0">
+			<effect x="0.000000" y="0.000000" visibility="visible" fill="rgb(255,255,255)" fill-opacity="1" effectType="dropShadow" stdDeviation="50" radius="0" />
+		</g>
+		<filter id="filter_0" width="385.000000" height="385.000000" x="-10.000000" y="-10.000000" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_0)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feOffset dx="0.000000" dy="0.000000" in="SourceAlpha" />
+			<feGaussianBlur stdDeviation="16.666666" />
+			<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 " />
+			<feBlend result="effect_dropShadow_1" in2="BackgroundImageFix" mode="normal" />
+			<feBlend result="shape" in="SourceGraphic" in2="effect_dropShadow_1" mode="normal" />
+		</filter>
+	</defs>
+	<rect id="ozon-svgrepo-com 6" width="365.000000" height="365.000000" x="0.000000" y="0.000000" />
+	<g filter="url(#filter_0)">
+		<circle id="Эллипс 15" cx="182.5" cy="182.5" r="142.5" fill="rgb(255,255,255)" />
+	</g>
+</svg>
