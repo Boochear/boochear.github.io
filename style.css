@@ -29,6 +29,7 @@
 }
 
 :root {
+    --bg: #010101;
     --panel: #12141c;
     --panel-border: #262a38;
     --white: #fff;
@@ -51,7 +52,7 @@ body {
 }
 
 body {
-    background: url("/media/wallpaper.jpg") center center / cover no-repeat fixed;
+    background: var(--bg);
     color: var(--white);
     font-family: var(--font-main);
     display: flex;
@@ -61,6 +62,21 @@ body {
     padding: 40px 20px;
     position: relative;
     overflow-x: hidden;
+}
+
+.title {
+    font-size: clamp(13px, 3.6vw, 42px);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    text-align: center;
+    white-space: nowrap;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 16px;
+    margin-bottom: 24px;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.65), 0 0 32px rgba(255, 255, 255, 0.35), 0 0 64px rgba(255, 255, 255, 0.18);
 }
 
 .card {
