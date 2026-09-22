@@ -1,19 +1,17 @@
-<svg viewBox="0 0 365 365" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="365.000000" height="365.000000" fill="none">
+<svg viewBox="0 0 210 146.757" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210.000000" height="146.756790" fill="none" customFrame="#000000">
 	<defs>
-		<g id="pixso_custom_effect_0">
-			<effect x="0.000000" y="0.000000" visibility="visible" fill="rgb(255,255,255)" fill-opacity="1" effectType="dropShadow" stdDeviation="50" radius="0" />
+		<g id="pixso_custom_effect_10">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="15" />
 		</g>
-		<filter id="filter_0" width="385.000000" height="385.000000" x="-10.000000" y="-10.000000" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_0)" color-interpolation-filters="sRGB">
+		<filter id="filter_10" width="210.000000" height="146.756790" x="0.000000" y="0.000000" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_10)" color-interpolation-filters="sRGB">
 			<feFlood flood-opacity="0" result="BackgroundImageFix" />
-			<feOffset dx="0.000000" dy="0.000000" in="SourceAlpha" />
-			<feGaussianBlur stdDeviation="16.666666" />
-			<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 " />
-			<feBlend result="effect_dropShadow_1" in2="BackgroundImageFix" mode="normal" />
-			<feBlend result="shape" in="SourceGraphic" in2="effect_dropShadow_1" mode="normal" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="5" result="effect_layerBlur_1" />
 		</filter>
 	</defs>
-	<rect id="ozon-svgrepo-com 6" width="365.000000" height="365.000000" x="0.000000" y="0.000000" />
-	<g filter="url(#filter_0)">
-		<circle id="Эллипс 15" cx="182.5" cy="182.5" r="142.5" fill="rgb(255,255,255)" />
+	<rect id="Фрейм 11" width="180.000000" height="116.756752" x="15.000000" y="14.999985" />
+	<path id="Слияние" d="M43.4228 16.6145C19.6285 23.086 4.11696 144.048 24.3295 130.734C37.0124 124.059 45.0765 103.208 51.1682 87.4576C57.2277 71.7899 61.3355 61.1686 66.0962 74.5658C73.4186 95.1722 95.9405 126.793 104.207 129.037C104.446 129.13 104.711 129.171 105 129.163C105.289 129.171 105.554 129.13 105.793 129.037C114.06 126.793 136.581 95.1722 143.904 74.5658C148.664 61.1686 152.772 71.7899 158.832 87.4575C164.923 103.208 172.988 124.059 185.671 130.734C205.883 144.048 190.372 23.086 166.577 16.6145C147.528 11.4335 141.159 19.1196 128.844 33.9805C125.777 37.6822 122.34 41.8291 118.247 46.3331C109.637 55.8079 106.287 66.1822 105 76.8945C103.713 66.1822 100.363 55.8079 91.7528 46.3331C87.6597 41.829 84.2234 37.6822 81.1559 33.9805C68.8413 19.1196 62.4721 11.4335 43.4228 16.6145Z" fill="rgb(0,0,0)" fill-rule="evenodd" />
+	<g filter="url(#filter_10)">
+		<path id="Слияние" d="M43.4228 16.6145C19.6285 23.086 4.11696 144.048 24.3295 130.734C37.0124 124.059 45.0765 103.208 51.1682 87.4575C57.2277 71.7899 61.3355 61.1686 66.0962 74.5658C73.4186 95.1722 95.9405 126.793 104.207 129.037C104.446 129.13 104.711 129.171 105 129.163C105.289 129.171 105.554 129.13 105.793 129.037C114.06 126.793 136.581 95.1722 143.904 74.5658C148.664 61.1686 152.772 71.7899 158.832 87.4575C164.923 103.208 172.988 124.059 185.671 130.734C205.883 144.048 190.372 23.086 166.577 16.6145C147.528 11.4335 141.159 19.1196 128.844 33.9805C125.777 37.6822 122.34 41.8291 118.247 46.3331C109.637 55.8079 106.287 66.1822 105 76.8945C103.713 66.1822 100.363 55.8079 91.7528 46.3331C87.6597 41.8291 84.2234 37.6822 81.1559 33.9805C68.8413 19.1196 62.4721 11.4335 43.4228 16.6145Z" fill="rgb(0,0,0)" fill-rule="evenodd" />
 	</g>
 </svg>

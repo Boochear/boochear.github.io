@@ -29,21 +29,22 @@
 }
 
 :root {
-    --bg: #010101;
-    --panel: #12141c;
-    --panel-border: #262a38;
-    --white: #fff;
-    --muted: #a8a8a8;
-    --link-bg: #050505;
-    --link-border: #5a5a5a;
-    --link-bg-hover: #2e2e2e;
-    --font-main: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    --bg: #ffffff;
+    --panel: #c9c9c9;
+    --panel-border: #000000;
+    --white: #000000;
+    --muted: #000000;
+    --link-bg: #c9c9c9;
+    --link-border: #acacac;
+    --link-bg-hover: #a3a3a3;
+    --font-main: 'Montserrat';
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-weight: 600;
 }
 
 html,
@@ -116,7 +117,7 @@ body {
 
 .tagline {
     margin: 5px 0 20px;
-    font-size: 16px;
+    font-size: 17px;
     color: var(--muted);
     letter-spacing: 1px;
 }
@@ -135,7 +136,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 13px 16px;
+    padding: 10px 13px;
     background: var(--link-bg);
     border: 1.5px solid var(--link-border);
     text-decoration: none;
@@ -152,8 +153,8 @@ body {
 }
 
 .link-icon {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
     object-fit: contain;
 }
