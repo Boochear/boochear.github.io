@@ -19,9 +19,9 @@
 </head>
 
 <body>
+    <div class="rain" id="rain" aria-hidden="true"></div>
 
     <main class="card">
-        <h1 class="title">я хочу смерти людям</h1>
         <div class="avatar-wrap">
             <img class="avatar" src="media/avatar.jpg" alt="Аватар Boochear" width="150" height="150">
         </div>
@@ -32,55 +32,96 @@
         <nav class="links">
             <a class="link-item" href="https://twitch.tv/boochear_twitch" target="_blank" rel="noopener noreferrer">
                 <img src="media/twitch.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Стримы</span>
+                <span class="link-text">
+                    <span class="link-label">Стримы</span>
+                    <span class="link-desc">играю и болтаю</span>
+                </span>
             </a>
 
             <a class="link-item" href="https://t.me/boochear" target="_blank" rel="noopener noreferrer">
                 <img src="media/telegram.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Написать</span>
+                <span class="link-text">
+                    <span class="link-label">Написать</span>
+                    <span class="link-desc">личные сообщения</span>
+                </span>
             </a>
 
             <a class="link-item" href="https://t.me/melanostalgia" target="_blank" rel="noopener noreferrer">
                 <img src="media/telegram.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Канал</span>
+                <span class="link-text">
+                    <span class="link-label">ТГК</span>
+                    <span class="link-desc">самое важное среди всего</span>
+                </span>
             </a>
 
             <a class="link-item" href="https://youtube.com/@BooChear" target="_blank" rel="noopener noreferrer">
                 <img src="media/youtube.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Повторы стримов</span>
+                <span class="link-text">
+                    <span class="link-label">Канал</span>
+                    <span class="link-desc">иногда что-то выкладываю</span>
+                </span>
             </a>
 
             <a class="link-item" href="https://github.com/boochear" target="_blank" rel="noopener noreferrer">
                 <img src="media/github.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Репозитории</span>
+                <span class="link-text">
+                    <span class="link-label">Репозитории</span>
+                    <span class="link-desc">мои программы и код</span>
+                </span>
             </a>
 
             <a class="link-item" href="https://donatty.com/boochear" target="_blank" rel="noopener noreferrer">
                 <img src="media/donatty.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Поддержать</span>
+                <span class="link-text">
+                    <span class="link-label">Поддержать</span>
+                    <span class="link-desc">если хочется помочь</span>
+                </span>
             </a>
 
             <a class="link-item" href="https://soundcloud.com/boochear/likes" target="_blank" rel="noopener noreferrer">
                 <img src="media/soundcloud.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Музыка</span>
+                <span class="link-text">
+                    <span class="link-label">Музыка</span>
+                    <span class="link-desc">любимое!!</span>
+                </span>
             </a>
 
             <a class="link-item" href="https://ozon.ru/t/Za57HnD" target="_blank" rel="noopener noreferrer">
                 <img src="media/ozon.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Отзывы</span>
+                <span class="link-text">
+                    <span class="link-label">Отзывы</span>
+                    <span class="link-desc">покупаю и проверяю</span>
+                </span>
             </a>
 
             <a class="link-item" href="https://ru.yummyani.me/users/id310486" target="_blank" rel="noopener noreferrer">
                 <img src="media/yummyani.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Аниме</span>
+                <span class="link-text">
+                    <span class="link-label">Аниме</span>
+                    <span class="link-desc">списки просмотренного</span>
+                </span>
             </a>
 
             <a class="link-item" href="https://ru.pinterest.com/Boochear" target="_blank" rel="noopener noreferrer">
                 <img src="media/pinterest.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Мемы</span>
+                <span class="link-text">
+                    <span class="link-label">Мемы</span>
+                    <span class="link-desc">делаю смешнявки</span>
+                </span>
             </a>
 
         </nav>
+
+        <div class="player" id="player">
+            <button class="player-cover" id="playerBtn" type="button" aria-label="Играть или пауза">
+                <img src="media/cover.jpg" alt="Обложка" width="64" height="64">
+            </button>
+            <div class="player-info">
+                <span class="player-artist">daniel.mp3</span>
+                <span class="player-title">green to blue</span>
+            </div>
+            <audio id="audio" src="media/sounds.mp3" loop preload="none"></audio>
+        </div>
 
         <div class="counter">
             <img src="media/eye.svg" class="counter-icon" alt="Просмотры" width="20" height="20">
@@ -99,11 +140,72 @@
             .catch(function () { el.textContent = '—'; });
     </script>
 
-</body>
+    <script>
+        var audio = document.getElementById('audio');
+        var player = document.getElementById('player');
+        var FADE_MS = 400;
+        var MAX_VOLUME = 1;
+        var fadeTimer = null;
 
-</body>
+        function fadeTo(target, done) {
+            clearInterval(fadeTimer);
+            var steps = 30;
+            var start = audio.volume;
+            var i = 0;
+            fadeTimer = setInterval(function () {
+                i++;
+                audio.volume = start + (target - start) * (i / steps);
+                if (i >= steps) {
+                    clearInterval(fadeTimer);
+                    audio.volume = target;
+                    if (done) done();
+                }
+            }, FADE_MS / steps);
+        }
 
-</body>
+        document.getElementById('playerBtn').addEventListener('click', function () {
+            if (player.classList.contains('is-playing')) {
+                player.classList.remove('is-playing');
+                fadeTo(0, function () { audio.pause(); });
+            } else {
+                player.classList.add('is-playing');
+                if (audio.paused) {
+                    audio.volume = 0;
+                    audio.play();
+                }
+                fadeTo(MAX_VOLUME);
+            }
+        });
+    </script>
+
+    <script>
+        (function () {
+            var rain = document.getElementById('rain');
+            if (!rain || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            var count = innerWidth < 600 ? 18 : 36;
+            var frag = document.createDocumentFragment();
+
+            for (var i = 0; i < count; i++) {
+                var d = document.createElement('i');
+                var near = Math.random() < 0.35;
+                var dur = near ? 2.2 + Math.random() * 1.5 : 4 + Math.random() * 3;
+
+                d.className = near ? 'drop near' : 'drop';
+                d.style.left = (Math.random() * 100) + '%';
+                d.style.height = (near ? 70 + Math.random() * 60 : 40 + Math.random() * 40) + 'px';
+                d.style.animationDuration = dur + 's';
+                d.style.animationDelay = (-Math.random() * dur) + 's';
+                frag.appendChild(d);
+            }
+
+            rain.appendChild(frag);
+
+            document.addEventListener('visibilitychange', function () {
+                rain.classList.toggle('paused', document.hidden);
+            });
+        })();
+    </script>
 
 </body>
 
