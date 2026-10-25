@@ -37,7 +37,7 @@
 
             <a class="link-item" href="https://t.me/boochear" target="_blank" rel="noopener noreferrer">
                 <img src="media/telegram.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Связаться</span>
+                <span class="link-label">Написать</span>
             </a>
 
             <a class="link-item" href="https://t.me/melanostalgia" target="_blank" rel="noopener noreferrer">
@@ -75,24 +75,36 @@
                 <span class="link-label">Аниме</span>
             </a>
 
-            <!-- <a class="link-item" href="https://boochear.github.io/agglomeration/" target="_blank"
-                rel="noopener noreferrer">
-                <img src="media/agglomeration.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">Разработки</span>
-            </a> -->
-
-            <a class="link-item" href="https://boochear.github.io/juic.pic/" target="_blank" rel="noopener noreferrer">
-                <img src="media/juice.pic!.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
-                <span class="link-label">juic.pic!</span>
-            </a>
-
             <a class="link-item" href="https://ru.pinterest.com/Boochear" target="_blank" rel="noopener noreferrer">
                 <img src="media/pinterest.svg" class="link-icon" alt="" width="20" height="20" loading="lazy">
                 <span class="link-label">Мемы</span>
             </a>
 
         </nav>
+
+        <div class="counter">
+            <img src="media/eye.svg" class="counter-icon" alt="Просмотры" width="20" height="20">
+            <span id="visits">…</span>
+        </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
+    <script>
+        var counter = new Counter({ workspace: 'boochear-links' });
+
+        counter.up('visits')
+            .then(function (result) {
+                document.getElementById('visits').textContent = result.value;
+            })
+            .catch(function (error) {
+                console.error(error);
+                document.getElementById('visits').textContent = '—';
+            });
+    </script>
+
+</body>
+
+</body>
 
 </body>
 
