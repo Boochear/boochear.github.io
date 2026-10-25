@@ -47,6 +47,10 @@
     font-weight: 600;
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
 html,
 body {
     height: 100%;
