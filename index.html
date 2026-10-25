@@ -88,19 +88,18 @@
         </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
     <script>
-        var counter = new Counter({ workspace: 'boochear-links' });
+        var el = document.getElementById('visits');
+        var ctrl = new AbortController();
+        setTimeout(function () { ctrl.abort(); }, 8000);
 
-        counter.up('visits')
-            .then(function (result) {
-                document.getElementById('visits').textContent = result.value;
-            })
-            .catch(function (error) {
-                console.error(error);
-                document.getElementById('visits').textContent = '—';
-            });
+        fetch('https://abacus.jasoncameron.dev/hit/boochear-links/visits', { signal: ctrl.signal })
+            .then(function (r) { return r.json(); })
+            .then(function (d) { el.textContent = d.value; })
+            .catch(function () { el.textContent = '—'; });
     </script>
+
+</body>
 
 </body>
 
